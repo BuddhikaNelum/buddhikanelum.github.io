@@ -1,81 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <script src="https://kit.fontawesome.com/b13c893816.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/style.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buddhika Nelum</title>
+    <title>Buddhika Nelum Prabath - Senior .NET Developer</title>
+    
+    <!-- Google Fonts for professional typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Social Media Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f4f7;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transform: scale(0.98);
+            animation: scaleIn 0.8s ease-in-out forwards;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid #ff6f00;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.1);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: #333;
+            margin: 20px 0;
+            animation: slideInFromLeft 1s ease-out;
+        }
+
+        .title {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #ff6f00;
+            margin-bottom: 15px;
+        }
+
+        .bio {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0;
+            animation: fadeInText 1.5s ease-in-out 0.5s forwards;
+        }
+
+        .contact {
+            margin-bottom: 40px;
+        }
+
+        .contact p {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 15px;
+            animation: fadeInText 1.5s ease-in-out 1s forwards;
+        }
+
+        .social-links {
+            margin: 10px 0;
+            animation: fadeInText 1.5s ease-in-out 1.5s forwards;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: #ff6f00;
+            margin: 0 15px;
+            font-size: 2rem;
+            font-weight: 500;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #e65c00;
+            transform: scale(1.2);
+        }
+
+        footer {
+            margin-top: 30px;
+        }
+
+        /* Add margin to create space between 'Let's Connect!' icons and the newsletter button */
+        #newsletterBtn {
+            margin-top: 30px; /* Added space here */
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            background-color: #ff6f00;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            text-decoration: none; /* Removed underline */
+        }
+
+        #newsletterBtn:hover {
+            background-color: #e65c00;
+            transform: scale(1.05);
+        }
+
+        .tech-stack {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #ff6f00; /* Same as theme color */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .tech-stack h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            font-size: 1.2rem;
+        }
+
+        .tech-list span {
+            background-color: #ffffff;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .tech-list span:hover {
+            background-color: #e65c00;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .footer-text {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 30px;
+        }
+
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .title {
+                font-size: 1.4rem;
+            }
+
+            .bio {
+                font-size: 1rem;
+            }
+
+            .social-links a {
+                font-size: 1.5rem;
+            }
+
+            #newsletterBtn {
+                font-size: 1.1rem;
+                padding: 12px 22px;
+            }
+
+            .tech-list {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.98);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+    </style>
 </head>
-
 <body>
-
-    <div class="card-container">
-        <span class="pro">PRO</span>
-        <img class="round" src="./img/cover.jpg" alt="user" />
-        <h3>Buddhika Nelum</h3>
-        <h6>FULL STACK DEVELOPER</h6>
-
-        <div class="resume-div">
-            <a href="#"><button>View Resume</button></a>
-        </div>
-
-        <div class="social-media-div">
-            <a href="http://www.nelum.io/" class="icon-button web" target="_blank"><i class="fas fa-globe fa-2x"></i></a>
-            <a href="https://www.linkedin.com/in/buddhika-nelum-prabath/" class="icon-button linkedin" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
-            <a href="https://github.com/BuddhikaNelum" class="icon-button github" target="_blank"><i class="fab fa-github fa-2x"></i></a>
-            <a href="https://stackoverflow.com/users/7777559/buddhika-nelum" class="icon-button stack-overflow" target="_blank"><i class="fab fa-stack-overflow fa-2x"></i></a>
-            <a href="https://twitter.com/buddhika_nelum" class="icon-button twitter" target="_blank"><i class="fab fa-twitter-square fa-2x"></i></a>
-            <a href="https://www.instagram.com/buddhika_nelum_prabath/" class="icon-button instagram" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
-            <a href="https://www.facebook.com/BuddhikaNelumPrabath/" class="icon-button facebook" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
-        </div>
-
-        <div class="about">
-            <h6>About</h6>
-            <p style="text-align: justify">A full-stack software engineer who always looking for latest technologies and
-                have good exposure in
-                working with Node.js, .NET Core and have 2+ years of industry experience including 1+ years in fintech
-                and supportive and enthusiast team player who has a proven track record of working with a leading bank
-                in Sri Lanka and international clients as well.</p>
-        </div>
-
-        <div class="skills">
-            <h6>Skills</h6>
-            <ul>
-                <li>Javascript</li>
-                <li>C#</li>
-                <li>Node.js</li>
-                <li>.Net Core</li>
-                <li>React.js</li>
-                <li>MongoDB</li>
-                <li>Redis</li>
-                <li>Elastic Stack</li>
-                <li>Postgres</li>
-                <li>MS SQL Server</li>
-                <li>MYSQL</li>
-                <li>RabbitMQ</li>
-                <li>AWS</li>
-            </ul>
-        </div>
-
-        <div class="hobbies">
-            <h6>Hobbies</h6>
-            <p style="text-align: justify">
-                Other than programming I spend my free time to write articles about latest technologies and teach
-                programming to newbies. I also love to hiking
-                and try different kind of fancy foods. <i class="fas fa-smile-wink fa-1x"></i>
+    <div class="container">
+        <header>
+            <img src="./img/cover.jpg" alt="Buddhika Nelum Prabath" class="profile-image">
+            <h1>Buddhika Nelum Prabath</h1>
+            <p class="title">SENIOR .NET DEVELOPER</p>
+            <p class="bio">
+                Hello, I am a Senior .NET Developer specializing in backend development, API integration, AI chatbots, and mentoring junior developers.
+                With over 10 years of experience, I work with modern technologies to deliver impactful solutions for businesses in various industries.
             </p>
-        </div>
+        </header>
+        <section class="contact">
+            <p>Let's Connect!</p>
+            <div class="social-links">
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:buddhika@example.com" target="_blank"><i class="fas fa-envelope"></i></a>
+            </div>
+            <!-- Newsletter button with proper redirection in new window -->
+            <a id="newsletterBtn" href="https://newsletter.buddhikanelum.com/" target="_blank">Sign up for the newsletter</a>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section class="tech-stack">
+            <h2>Tech Stack & Skills</h2>
+            <div class="tech-list">
+                <span>C#</span>
+                <span>API Development</span>
+                <span>.Net Core/.Net 5+</span>
+                <span>Microservices</span>
+                <span>Web API</span>
+                <span>Redis</span>
+                <span>ASP.NET MVC</span>
+                <span>MS SQL Server</span>
+                <span>Postgres</span>
+                <span>Mongo DB</span>
+                <span>AWS</span>
+                <span>RabbitMQ</span>
+                <span>SignalR</span>
+                <span>Entity Framework</span>
+                <span>Grpc</span>
+                <span>Dapper</span>
+                <span>Git</span>
+                <span>GitHub</span>
+                <span>Azure DevOps</span>
+                <span>Jira</span>
+                <span>Twilio</span>
+                <span>ChatGPT</span>
+                <span>LangChain</span>
+            </div>
+        </section>
+
+        <br> <!-- Line break after Tech Stack & Skills section -->
+
+        <footer>
+            <div class="footer-text">
+                <p>© 2024 Buddhika Nelum Prabath. All Rights Reserved.</p>
+            </div>
+        </footer>
     </div>
 
-    <footer>
-        <p>
-            |
-            <script>document.write(new Date().getFullYear())</script> @ Buddhika Nelum |
-        </p>
-    </footer>
-
 </body>
-
 </html>
