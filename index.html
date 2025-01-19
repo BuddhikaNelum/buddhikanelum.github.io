@@ -1,308 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buddhika Nelum Prabath - Senior .NET Developer</title>
+    <meta name="description" content="Senior .NET Developer specializing in enterprise solutions and cloud architecture">
+    <title>Buddhika Nelum Prabath | Senior .NET Developer</title>
     
-    <!-- Google Fonts for professional typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Social Media Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f0f4f7;
-            color: #333;
-            text-align: center;
-            padding: 20px;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-            transform: scale(0.98);
-            animation: scaleIn 0.8s ease-in-out forwards;
-        }
-
-        .profile-image {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border: 5px solid #ff6f00;
-            transition: transform 0.3s ease;
-        }
-
-        .profile-image:hover {
-            transform: scale(1.1);
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            font-weight: 600;
-            color: #333;
-            margin: 20px 0;
-            animation: slideInFromLeft 1s ease-out;
-        }
-
-        .title {
-            font-size: 1.6rem;
-            font-weight: 500;
-            color: #ff6f00;
-            margin-bottom: 15px;
-        }
-
-        .bio {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            opacity: 0;
-            animation: fadeInText 1.5s ease-in-out 0.5s forwards;
-        }
-
-        .contact {
-            margin-bottom: 40px;
-        }
-
-        .contact p {
-            font-size: 1.3rem;
-            font-weight: 500;
-            color: #333;
-            margin-bottom: 15px;
-            animation: fadeInText 1.5s ease-in-out 1s forwards;
-        }
-
-        .social-links {
-            margin: 10px 0;
-            animation: fadeInText 1.5s ease-in-out 1.5s forwards;
-        }
-
-        .social-links a {
-            text-decoration: none;
-            color: #ff6f00;
-            margin: 0 15px;
-            font-size: 2rem;
-            font-weight: 500;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #e65c00;
-            transform: scale(1.2);
-        }
-
-        footer {
-            margin-top: 30px;
-        }
-
-        /* Add margin to create space between 'Let's Connect!' icons and the newsletter button */
-        #newsletterBtn {
-            margin-top: 30px; /* Added space here */
-            padding: 15px 25px;
-            font-size: 1.2rem;
-            background-color: #ff6f00;
-            color: white;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
-            text-decoration: none; /* Removed underline */
-        }
-
-        #newsletterBtn:hover {
-            background-color: #e65c00;
-            transform: scale(1.05);
-        }
-
-        .tech-stack {
-            margin-top: 50px;
-            padding: 20px;
-            background-color: #ff6f00; /* Same as theme color */
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .tech-stack h2 {
-            font-size: 2rem;
-            margin-bottom: 30px;
-            font-weight: 600;
-            color: #fff;
-        }
-
-        .tech-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            font-size: 1.2rem;
-        }
-
-        .tech-list span {
-            background-color: #ffffff;
-            color: #333;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-weight: 500;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .tech-list span:hover {
-            background-color: #e65c00;
-            color: white;
-            transform: scale(1.1);
-        }
-
-        .footer-text {
-            font-size: 1rem;
-            color: #666;
-            margin-top: 30px;
-        }
-
-        @media screen and (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-
-            .title {
-                font-size: 1.4rem;
-            }
-
-            .bio {
-                font-size: 1rem;
-            }
-
-            .social-links a {
-                font-size: 1.5rem;
-            }
-
-            #newsletterBtn {
-                font-size: 1.1rem;
-                padding: 12px 22px;
-            }
-
-            .tech-list {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes scaleIn {
-            from {
-                transform: scale(0.98);
-            }
-            to {
-                transform: scale(1);
-            }
-        }
-
-        @keyframes slideInFromLeft {
-            from {
-                transform: translateX(-100%);
-            }
-            to {
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInText {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="./img/cover.jpg" alt="Buddhika Nelum Prabath" class="profile-image">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Buddhika Nelum Prabath</a>
+            <div class="nav-links">
+                <a href="#expertise">Expertise</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <img src="/img/img3.JPEG" alt="Buddhika Nelum Prabath" class="profile-image">
             <h1>Buddhika Nelum Prabath</h1>
-            <p class="title">SENIOR .NET DEVELOPER</p>
-            <p class="bio">
-                Hello, I am a Senior .NET Developer specializing in backend development, API integration, AI chatbots, and mentoring junior developers.
-                With over 10 years of experience, I work with modern technologies to deliver impactful solutions for businesses in various industries.
-            </p>
-        </header>
-        <section class="contact">
-            <p>Let's Connect!</p>
-            <div class="social-links">
-                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="mailto:buddhika@example.com" target="_blank"><i class="fas fa-envelope"></i></a>
+            <p class="title">Senior .NET Developer</p>
+            <p>A highly motivated and self-taught software engineer with 5+ years of experience in designing and implementing enterprise-level applications using the .NET stack. Proven expertise in delivering projects on time and exceeding expectations, with a solid track record working with both local and international clients. Skilled in technologies such as C#, .NET Core, Web API, SQL Server, AWS, and Microservice architecture, among others. Known for a positive, enthusiastic attitude and strong team collaboration skills.</p>
+        </div>
+    </section>
+
+    <section id="expertise" class="expertise-section">
+        <div class="container">
+            <h2 class="section-title">Technical Expertise</h2>
+            
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <h3><i class="fas fa-code"></i> Core .NET Technologies</h3>
+                    <ul class="skill-list">
+                        <li>C# .NET Framework</li>
+                        <li>.NET Core/.NET 5+</li>
+                        <li>ASP.NET Web API</li>
+                        <li>Entity Framework Core</li>
+                        <li>Dapper</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <h3><i class="fas fa-layer-group"></i> Architecture & Patterns</h3>
+                    <ul class="skill-list">
+                        <li>Clean Architecture</li>
+                        <li>Microservices</li>
+                        <li>Domain-Driven Design</li>
+                        <li>CQRS Pattern</li>
+                        <li>Event Sourcing</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <h3><i class="fas fa-cloud"></i> Cloud & Infrastructure</h3>
+                    <ul class="skill-list">
+                        <li>Azure Services</li>
+                        <li>AWS Cloud</li>
+                        <li>Docker</li>
+                        <li>Kubernetes</li>
+                        <li>CI/CD Pipelines</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <h3><i class="fas fa-database"></i> Database & Caching</h3>
+                    <ul class="skill-list">
+                        <li>SQL Server</li>
+                        <li>Redis Cache</li>
+                        <li>MongoDB</li>
+                        <li>PostgreSQL</li>
+                        <li>Azure Cosmos DB</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <h3><i class="fas fa-plug"></i> Integration & Messaging</h3>
+                    <ul class="skill-list">
+                        <li>REST APIs</li>
+                        <li>MassTransit/RabbitMQ</li>
+                        <li>gRPC Services</li>
+                        <li>Azure Service Bus</li>
+                        <li>AI/ML Integrations</li>
+                    </ul>
+                </div>
             </div>
-            <!-- Newsletter button with proper redirection in new window -->
-            <a id="newsletterBtn" href="https://newsletter.buddhikanelum.com/" target="_blank">Sign up for the newsletter</a>
-        </section>
+        </div>
+    </section>
 
-        <!-- Tech Stack Section -->
-        <section class="tech-stack">
-            <h2>Tech Stack & Skills</h2>
-            <div class="tech-list">
-                <span>C#</span>
-                <span>API Development</span>
-                <span>.Net Core/.Net 5+</span>
-                <span>Microservices</span>
-                <span>Web API</span>
-                <span>Redis</span>
-                <span>ASP.NET MVC</span>
-                <span>MS SQL Server</span>
-                <span>Postgres</span>
-                <span>Mongo DB</span>
-                <span>AWS</span>
-                <span>RabbitMQ</span>
-                <span>SignalR</span>
-                <span>Entity Framework</span>
-                <span>Grpc</span>
-                <span>Dapper</span>
-                <span>Git</span>
-                <span>GitHub</span>
-                <span>Azure DevOps</span>
-                <span>Jira</span>
-                <span>Twilio</span>
-                <span>ChatGPT</span>
-                <span>LangChain</span>
+    <section id="education" class="education-section">
+        <div class="container">
+            <h2 class="section-title">Education & Certifications</h2>
+            
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <div class="education-content">
+                        <h4>BEng(Hons) in Software Engineering</h4>
+                        <p class="institution">London Metropolitan University, UK</p>
+                    </div>
+                </div>
+
+                <div class="education-card">
+                    <h3><i class="fas fa-certificate"></i> Professional Certifications</h3>
+                    <div class="certification-content">
+                        <h4>Microsoft Certified: Azure Developer Associate</h4>
+                        <p class="credential">Credential ID: 98A9CB963AEB3EF4</p>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <br> <!-- Line break after Tech Stack & Skills section -->
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Let's Connect</h2>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/buddhika-nelum-prabath/" class="social-link" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/BuddhikaNelum" class="social-link" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:dlbnprabath@gmail.com" class="social-link">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </section>
 
-        <footer>
-            <div class="footer-text">
-                <p>© 2024 Buddhika Nelum Prabath. All Rights Reserved.</p>
+    <section class="newsletter-section">
+        <div class="container">
+            <h2 class="section-title">Stay Updated</h2>
+            <div class="newsletter-card">
+                <i class="fas fa-newspaper newsletter-icon"></i>
+                <p class="newsletter-text">Subscribe to my newsletter for .NET development insights, architecture tips, and industry best practices.</p>
+                <a href="https://newsletter.buddhikanelum.com" target="_blank" class="newsletter-btn">
+                    Subscribe to Newsletter <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
-        </footer>
-    </div>
+        </div>
+    </section>
 
+    <footer>
+        <p>© 2024 Buddhika Nelum Prabath - All rights reserved</p>
+    </footer>
+
+    <script>
+        const themeToggle = document.querySelector('.theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            themeToggle.innerHTML = newTheme === 'light' ? 
+                '<i class="fas fa-moon"></i>' : 
+                '<i class="fas fa-sun"></i>';
+        });
+    </script>
 </body>
 </html>
