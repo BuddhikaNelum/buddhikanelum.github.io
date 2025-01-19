@@ -110,18 +110,6 @@ body {
     box-shadow: 0 12px 28px var(--shadow);
 }
 
-h1 {
-    font-size: 2.5rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
-}
-
-.title {
-    color: var(--text-secondary);
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-}
-
 .section-title {
     text-align: center;
     color: var(--primary);
@@ -143,19 +131,46 @@ h1 {
     border-radius: 2px;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-.expertise-section,
-.education-section {
+.expertise-section {
     padding: 5rem 0;
     background: var(--surface);
 }
 
-.expertise-grid,
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    justify-content: center;
+}
+
+.skill-tag {
+    background: var(--background);
+    color: var(--text);
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+    cursor: default;
+    box-shadow: 0 2px 4px var(--shadow);
+}
+
+.skill-tag:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px var(--shadow);
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.education-section {
+    padding: 5rem 0;
+    background: var(--background);
+}
+
 .education-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -165,22 +180,19 @@ h1 {
     padding: 0 1rem;
 }
 
-.expertise-card,
 .education-card {
-    background: var(--background);
+    background: var(--surface);
     padding: 2rem;
     border-radius: 8px;
     border: 1px solid var(--border);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.expertise-card:hover,
 .education-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px var(--shadow);
 }
 
-.expertise-card h3,
 .education-card h3 {
     color: var(--primary);
     margin-bottom: 1.5rem;
@@ -190,43 +202,8 @@ h1 {
     font-size: 1.25rem;
 }
 
-.expertise-card h3 i,
 .education-card h3 i {
     color: var(--accent);
-}
-
-.skill-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-.skill-list li {
-    color: var(--text);
-    font-size: 1rem;
-    padding: 0.5rem;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
-}
-
-.skill-list li:hover {
-    background: var(--surface);
-}
-
-.education-content h4, 
-.certification-content h4 {
-    color: var(--text);
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-
-.institution, 
-.credential {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
 }
 
 .contact-section {
@@ -245,29 +222,17 @@ h1 {
 .social-link {
     color: var(--text);
     font-size: 1.5rem;
-    transition: color 0.3s, transform 0.3s;
+    transition: all 0.3s ease;
     padding: 1rem;
+    border-radius: 50%;
+    background: var(--background);
+    box-shadow: 0 2px 4px var(--shadow);
 }
 
 .social-link:hover {
     color: var(--primary);
-    transform: translateY(-3px);
-}
-
-.theme-toggle {
-    background: none;
-    border: none;
-    color: var(--text);
-    cursor: pointer;
-    font-size: 1.2rem;
-    padding: 0.5rem;
-}
-
-footer {
-    text-align: center;
-    padding: 2rem;
-    color: var(--text-secondary);
-    border-top: 1px solid var(--border);
+    transform: translateY(-3px) rotate(8deg);
+    box-shadow: 0 4px 12px var(--shadow);
 }
 
 .newsletter-section {
@@ -318,11 +283,11 @@ footer {
     background: var(--secondary);
 }
 
-@media (max-width: 768px) {
-    .newsletter-card {
-        margin: 0 1rem;
-        padding: 2rem 1rem;
-    }
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border);
 }
 
 @media (max-width: 768px) {
@@ -334,8 +299,9 @@ footer {
         gap: 1rem;
     }
 
-    h1 {
-        font-size: 2rem;
+    .profile-image {
+        width: 180px;
+        height: 180px;
     }
 
     .section-title {
@@ -343,7 +309,15 @@ footer {
         margin-bottom: 2rem;
     }
 
-    .expertise-grid,
+    .skills-container {
+        gap: 0.75rem;
+    }
+
+    .skill-tag {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
     .education-grid {
         grid-template-columns: 1fr;
         padding: 2rem 1rem;
@@ -352,10 +326,5 @@ footer {
     .newsletter-card {
         margin: 0 1rem;
         padding: 2rem 1rem;
-    }
-
-    .profile-image {
-        width: 180px;
-        height: 180px;
     }
 }
